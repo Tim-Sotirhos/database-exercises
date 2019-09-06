@@ -34,7 +34,7 @@ Then add in Select CONCAT(first_name, " ", Last_name) and populate it with value
 --2) Create a temporary table based on the payment table from the sakila database. 
 Write the SQL necessary to transform the amount column such that it is stored as an integer representing the number of cents of the payment.
 
-use bayes_823;
+USE bayes_823;
 CREATE TEMPORARY TABLE payment_copy as
 SELECT payment_id, customer_id, staff_id, rental_id, amount, payment_date, last_update
 FROM sakila.payment;
