@@ -84,8 +84,8 @@ Order by departments.dept_name asc;
 
 SELECT departments.dept_no, departments.dept_name, count(*) AS num_employees
 FROM departments
-JOIN dept_emp ON (departments.dept_no = dept_emp.dept_no)
-JOIN employees ON (dept_emp.emp_no = employees.emp_no)
+JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
+JOIN employees ON dept_emp.emp_no = employees.emp_no
 WHERE dept_emp.to_date = '9999-01-01'
 GROUP BY departments.dept_no, departments.dept_name;
 
@@ -94,9 +94,9 @@ GROUP BY departments.dept_no, departments.dept_name;
 
 SELECT departments.dept_name, AVG(salaries.salary) AS average_salary
 FROM departments
-JOIN dept_emp ON (departments.dept_no = dept_emp.dept_no)
-JOIN employees ON (dept_emp.emp_no = employees.emp_no)
-JOIN salaries ON (employees.emp_no = salaries.emp_no)
+JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
+JOIN employees ON dept_emp.emp_no = employees.emp_no
+JOIN salaries ON employees.emp_no = salaries.emp_no
 WHERE dept_emp.to_date = '9999-01-01' AND salaries.to_date = '9999-01-01'
 GROUP BY departments.dept_name
 ORDER BY average_salary DESC
@@ -106,9 +106,9 @@ LIMIT 1;
 
 SELECT employees.first_name, employees.last_name
 FROM departments
-JOIN dept_emp ON (departments.dept_no = dept_emp.dept_no)
-JOIN employees ON (dept_emp.emp_no = employees.emp_no)
-JOIN salaries ON (employees.emp_no = salaries.emp_no)
+JOIN dept_emp ON departments.dept_no = dept_emp.dept_no
+JOIN employees ON dept_emp.emp_no = employees.emp_no
+JOIN salaries ON employees.emp_no = salaries.emp_no
 WHERE dept_emp.to_date = '9999-01-01' AND salaries.to_date = '9999-01-01' AND departments.dept_name = 'Marketing'
 ORDER BY salaries.salary DESC
 LIMIT 1;
