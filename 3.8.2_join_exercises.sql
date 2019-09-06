@@ -115,7 +115,14 @@ LIMIT 1;
 
 --9) Which current department manager has the highest salary?
 
-
+SELECT employees.first_name, employees.last_name, salaries.salary, departments.dept_name
+FROM departments
+JOIN dept_manager ON dept_manager.dept_no = departments.dept_no
+JOIN employees ON dept_manager.emp_no = employees.emp_no
+JOIN salaries ON employees.emp_no = salaries.emp_no
+WHERE dept_manager.to_date = '9999-01-01' AND salaries.to_date = '9999-01-01'
+ORDER BY salaries.salary DESC
+LIMIT 1;
 
 
 
