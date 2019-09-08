@@ -2,15 +2,15 @@
 
 Basic Statements
 
-USE `albums_db`;
+USE albums_db;
 SHOW TABLES;
 SHOW CREATE TABLE albums;
 DESCRIBE albums;
 SELECT * FROM albums;
 
-SELECT * FROM albums where artist = 'pink floyd';
+SELECT name FROM albums where artist = 'pink floyd';
 
-SELECT release_date FROM albums where name = 'sgt. pepper's lonely hearts club band';
+SELECT release_date FROM albums where name = "sgt. pepper's lonely hearts club band";
 
 SELECT genre FROM albums WHERE name = 'nevermind';
 
