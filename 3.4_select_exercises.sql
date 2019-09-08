@@ -1,24 +1,27 @@
 /*
+
 Basic Statements
 
-use `albums_db`;
-show TABLES;
-show create table `albums`;
-describe `albums`;
-select * from `albums`;
+USE `albums_db`;
+SHOW TABLES;
+SHOW CREATE TABLE albums;
+DESCRIBE albums;
+SELECT * FROM albums;
 
-select * from `albums` where artist='pink floyd';
+SELECT * FROM albums where artist = 'pink floyd';
 
-select release_date from `albums` where name="sgt. pepper's lonely hearts club band";
+SELECT release_date FROM albums where name = 'sgt. pepper's lonely hearts club band';
 
-select genre from albums where name='nevermind';
+SELECT genre FROM albums WHERE name = 'nevermind';
 
-select * from albums
-where `release_date`>=1990 and `release_date`< 2000;
+SELECT * FROM albums
+WHERE release_date >= 1990 and release_date < 2000;
 
-select * from albums where sales<20;
+SELECT * FROM albums WHERE sales < 20;
 
-select * from albums where genre = "rock";
+SELECT * FROM albums where genre = 'rock';
 -- because only 'rock' was inputed in my condition instead of 'hard rock' or 'progressive rock'
 
-select * from albums where genre like '%rock%';*/
+SELECT * FROM albums where genre like '%rock%';
+
+*/
